@@ -1,6 +1,6 @@
-import React from "react";
-import { Star, Quote } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Quote, Star } from "lucide-react";
+import React from "react";
 
 export default function Success() {
 	const testimonials = [
