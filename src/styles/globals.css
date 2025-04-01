@@ -3,70 +3,79 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme {
-	--color-border: hsl(var(--border));
-	--color-input: hsl(var(--input));
-	--color-ring: hsl(var(--ring));
-	--color-background: hsl(var(--background));
-	--color-foreground: hsl(var(--foreground));
+    --color-border: hsl(var(--border));
+    --color-input: hsl(var(--input));
+    --color-ring: hsl(var(--ring));
+    --color-background: hsl(var(--background));
+    --color-foreground: hsl(var(--foreground));
 
-	--color-primary: hsl(var(--primary));
-	--color-primary-foreground: hsl(var(--primary-foreground));
+    --color-primary: hsl(var(--primary));
+    --color-primary-foreground: hsl(var(--primary-foreground));
 
-	--color-secondary: hsl(var(--secondary));
-	--color-secondary-foreground: hsl(var(--secondary-foreground));
+    --color-secondary: hsl(var(--secondary));
+    --color-secondary-foreground: hsl(var(--secondary-foreground));
 
-	--color-destructive: hsl(var(--destructive));
-	--color-destructive-foreground: hsl(var(--destructive-foreground));
+    --color-destructive: hsl(var(--destructive));
+    --color-destructive-foreground: hsl(var(--destructive-foreground));
 
-	--color-muted: hsl(var(--muted));
-	--color-muted-foreground: hsl(var(--muted-foreground));
+    --color-muted: hsl(var(--muted));
+    --color-muted-foreground: hsl(var(--muted-foreground));
 
-	--color-accent: hsl(var(--accent));
-	--color-accent-foreground: hsl(var(--accent-foreground));
+    --color-accent: hsl(var(--accent));
+    --color-accent-foreground: hsl(var(--accent-foreground));
 
-	--color-popover: hsl(var(--popover));
-	--color-popover-foreground: hsl(var(--popover-foreground));
+    --color-popover: hsl(var(--popover));
+    --color-popover-foreground: hsl(var(--popover-foreground));
 
-	--color-card: hsl(var(--card));
-	--color-card-foreground: hsl(var(--card-foreground));
+    --color-card: hsl(var(--card));
+    --color-card-foreground: hsl(var(--card-foreground));
 
-	--radius-lg: var(--radius);
-	--radius-md: calc(var(--radius) - 2px);
-	--radius-sm: calc(var(--radius) - 4px);
+    --radius-lg: var(--radius);
+    --radius-md: calc(var(--radius) - 2px);
+    --radius-sm: calc(var(--radius) - 4px);
 
-	--animate-accordion-down: accordion-down 0.2s ease-out;
-	--animate-accordion-up: accordion-up 0.2s ease-out;
+    --animate-accordion-down: accordion-down 0.2s ease-out;
+    --animate-accordion-up: accordion-up 0.2s ease-out;
 
-	--font-sans: var(--font-sans), ui-sans-serif, system-ui, sans-serif,
-		"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --font-sans: var(--font-sans), ui-sans-serif, system-ui, sans-serif,
+        "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 
-	@keyframes accordion-down {
-		from {
-			height: 0;
-		}
-		to {
-			height: var(--radix-accordion-content-height);
-		}
-	}
-	@keyframes accordion-up {
-		from {
-			height: var(--radix-accordion-content-height);
-		}
-		to {
-			height: 0;
-		}
-	}
+    --color-techblue: #0a84ff;
+    --color-techgreen: #00ff00;
+    --color-techcyan: #00ffff;
+
+    @keyframes accordion-down {
+        from {
+            height: 0;
+        }
+
+        to {
+            height: var(--radix-accordion-content-height);
+        }
+    }
+
+    @keyframes accordion-up {
+        from {
+            height: var(--radix-accordion-content-height);
+        }
+
+        to {
+            height: 0;
+        }
+    }
 }
 
 @utility container {
-	margin-inline: auto;
-	padding-inline: 2rem;
-	@media (width >= --theme(--breakpoint-sm)) {
-		max-width: none;
-	}
-	@media (width >= 1400px) {
-		max-width: 1400px;
-	}
+    margin-inline: auto;
+    padding-inline: 2rem;
+
+    @media (width >=--theme(--breakpoint-sm)) {
+        max-width: none;
+    }
+
+    @media (width >=1400px) {
+        max-width: 1400px;
+    }
 }
 
 /*
@@ -78,160 +87,186 @@
   color utility to any element that depends on these defaults.
 */
 @layer base {
-	*,
-	::after,
-	::before,
-	::backdrop,
-	::file-selector-button {
-		border-color: var(--color-gray-200, currentColor);
-	}
+
+    *,
+    ::after,
+    ::before,
+    ::backdrop,
+    ::file-selector-button {
+        border-color: var(--color-gray-200, currentColor);
+    }
 }
 
 @layer base {
-	/* Color Variables */
-	:root {
-		/* Base Colors */
-		--color-white: 0 0% 100%;
-		/* Update black to a softer dark for body text */
-		--color-black: 210 10% 25%;
-		/* Use a soft light blue for backgrounds */
-		--color-gray-light: 210 50% 95%;
-		--color-gray-medium: 0 0% 89.8%;
-		--color-gray-dark: 0 0% 45.1%;
-		/* Primary: Deep Vibrant Blue for trust & professionalism */
-		--color-primary: 220 90% 30%;
-		--color-primary-foreground: 0 0% 100%;
-		--color-destructive: 0 84.2% 60.2%;
-		--color-destructive-dark: 0 62.8% 30.6%;
-		--color-radius: 0.5rem;
 
-		--color-chart-1: 12 76% 61%;
-		--color-chart-2: 173 58% 39%;
-		--color-chart-3: 197 37% 24%;
-		--color-chart-4: 43 74% 66%;
-		--color-chart-5: 27 87% 67%;
+    /* Color Variables */
+    :root {
+        /* Base Colors */
+        --color-white: hsl(0 0% 98%);
+        --color-black: hsl(222.2 84% 4.9%);
+        --color-gray-light: hsl(210 50% 95%);
+        --color-gray-medium: hsl(0 0% 89.8%);
+        --color-gray-dark: hsl(0 0% 45.1%);
 
-		--dark-color-white: 0 0% 98%;
-		--dark-color-black: 0 0% 3.9%;
-		--dark-color-gray-light: 0 0% 14.9%;
-		--dark-color-gray-medium: 0 0% 14.9%;
-		--dark-color-gray-dark: 0 0% 63.9%;
-		--dark-color-primary: 220 90% 30%;
-		--dark-color-primary-foreground: 0 0% 100%;
+        /* Primary: Deep Vibrant Blue for trust & professionalism */
+        --color-primary: hsl(222.2 47.4% 11.2%);
+        --color-primary-foreground: hsl(210 40% 98%);
+        --color-destructive: hsl(0 84.2% 60.2%);
+        --color-destructive-dark: hsl(0 62.8% 30.6%);
+        --color-radius: 0.5rem;
 
-		--dark-color-chart-1: 220 70% 50%;
-		--dark-color-chart-2: 160 60% 45%;
-		--dark-color-chart-3: 30 80% 55%;
-		--dark-color-chart-4: 280 65% 60%;
-		--dark-color-chart-5: 340 75% 55%;
+        --color-chart-1: hsl(12 76% 61%);
+        --color-chart-2: hsl(173 58% 39%);
+        --color-chart-3: hsl(197 37% 24%);
+        --color-chart-4: hsl(43 74% 66%);
+        --color-chart-5: hsl(27 87% 67%);
 
-		/* Accent: Vibrant Turquoise for CTAs/links */
-		--accent: 174 70% 40%;
-		--accent-foreground: 0 0% 100%;
-	}
+        --dark-color-white: hsl(0 0% 98%);
+        --dark-color-black: hsl(0 0% 3.9%);
+        --dark-color-gray-light: hsl(0 0% 14.9%);
+        --dark-color-gray-medium: hsl(0 0% 14.9%);
+        --dark-color-gray-dark: hsl(0 0% 63.9%);
+        --dark-color-primary: hsl(220 90% 30%);
+        --dark-color-primary-foreground: hsl(0 0% 100%);
 
-	/* Light Theme */
-	:root {
-		/* Base Colors */
-		--white: var(--color-white);
-		--black: var(--color-black);
-		--gray-light: var(--color-gray-light);
-		--gray-medium: var(--color-gray-medium);
-		--gray-dark: var(--color-gray-dark);
-		--primary-color: var(--color-primary);
-		--primary-foreground-color: var(--color-primary-foreground);
-		--destructive-color: var(--color-destructive);
-		--radius: var(--color-radius);
+        --dark-color-chart-1: hsl(220 70% 50%);
+        --dark-color-chart-2: hsl(160 60% 45%);
+        --dark-color-chart-3: hsl(30 80% 55%);
+        --dark-color-chart-4: hsl(280 65% 60%);
+        --dark-color-chart-5: hsl(340 75% 55%);
 
-		/* Backgrounds */
-		--background: hsl(210, 50%, 98%); /* Very light blue background */
-		--foreground: var(--black); /* Softer dark text */
-		--card-background: hsl(210, 50%, 98%);
-		--popover-background: hsl(210, 50%, 98%);
+        /* Accent: Vibrant Turquoise for CTAs/links */
+        --accent: hsl(174 70% 40%);
+        --accent-foreground: hsl(0 0% 100%);
+    }
 
-		/* Foregrounds */
-		--card-foreground: var(--black);
-		--popover-foreground: var(--black);
-		--primary-foreground: var(--primary-foreground-color);
-		--secondary-foreground: var(--primary-color);
-		--muted-foreground: var(--gray-dark);
-		--accent-foreground: var(--primary-color);
-		--destructive-foreground: var(--primary-foreground-color);
+    /* Light Theme */
+    :root {
+        /* Base Colors */
+        --white: hsl(0, 0%, 98%);
+        --black: var(--color-black);
+        --gray-light: var(--color-gray-light);
+        --gray-medium: var(--color-gray-medium);
+        --gray-dark: var(--color-gray-dark);
+        --primary-color: var(--color-primary);
+        --primary-foreground-color: var(--color-primary-foreground);
+        --destructive-color: var(--color-destructive);
+        --radius: var(--color-radius);
 
-		/* Buttons */
-		--primary: var(--primary-color);
-		--secondary: hsl(210, 50%, 95%); /* Soft light blue for secondary buttons */
-		--muted: var(--gray-light);
-		--accent: hsl(174, 70%, 40%); /* Vibrant turquoise accent */
-		--destructive: var(--destructive-color);
+        /* Backgrounds */
+        --background: hsl(0, 0%, 98%);
+        --foreground: hsl(222.2, 84%, 4.9%);
+        --card-background: var(--white);
+        --popover-background: var(--white);
 
-		/* Borders and Inputs */
-		--border: var(--gray-medium);
-		--input: var(--gray-medium);
-		--ring: var(--black);
+        /* Foregrounds */
+        --card-foreground: var(--black);
+        --popover-foreground: var(--black);
+        --primary-foreground: var(--primary-foreground-color);
+        --secondary-foreground: var(--primary-color);
+        --muted-foreground: var(--gray-dark);
+        --accent-foreground: var(--primary-color);
+        --destructive-foreground: var(--primary-foreground-color);
 
-		/* Charts */
-		--chart-1: var(--color-chart-1);
-		--chart-2: var(--color-chart-2);
-		--chart-3: var(--color-chart-3);
-		--chart-4: var(--color-chart-4);
-		--chart-5: var(--color-chart-5);
-	}
+        /* Buttons */
+        --primary: var(--primary-color);
+        --secondary: hsl(210, 50%, 95%);
+        /* Soft light blue for secondary buttons */
+        --muted: var(--gray-light);
+        --accent: hsl(174, 70%, 40%);
+        /* Vibrant turquoise accent */
+        --destructive: var(--destructive-color);
 
-	/* Dark Theme */
-	.dark {
-		/* Base Colors */
-		--white: var(--dark-color-white);
-		--black: var(--dark-color-black);
-		--gray-light: var(--dark-color-gray-light);
-		--gray-medium: var(--dark-color-gray-medium);
-		--gray-dark: var(--dark-color-gray-dark);
-		/* Use the same primary color in dark mode for brand consistency */
-		--primary-color: var(--color-primary);
-		--primary-foreground-color: var(--color-primary-foreground);
-		--destructive-color: var(--color-destructive-dark);
+        /* Borders and Inputs */
+        --border: var(--gray-medium);
+        --input: var(--gray-medium);
+        --ring: var(--black);
 
-		/* Backgrounds */
-		--background: var(--black);
-		--foreground: var(--white);
-		--card-background: var(--black);
-		--popover-background: var(--black);
+        /* Charts */
+        --chart-1: var(--color-chart-1);
+        --chart-2: var(--color-chart-2);
+        --chart-3: var(--color-chart-3);
+        --chart-4: var(--color-chart-4);
+        --chart-5: var(--color-chart-5);
+    }
 
-		/* Foregrounds */
-		--card-foreground: var(--white);
-		--popover-foreground: var(--white);
-		--primary-foreground: var(--primary-foreground-color);
-		--secondary-foreground: var(--white);
-		--muted-foreground: var(--gray-dark);
-		--accent-foreground: var(--white);
-		--destructive-foreground: var(--white);
+    /* Dark Theme */
+    .dark {
+        /* Base Colors */
+        --white: var(--dark-color-white);
+        --black: var(--dark-color-black);
+        --gray-light: var(--dark-color-gray-light);
+        --gray-medium: var(--dark-color-gray-medium);
+        --gray-dark: var(--dark-color-gray-dark);
+        /* Use the same primary color in dark mode for brand consistency */
+        --primary-color: var(--color-primary);
+        --primary-foreground-color: var(--color-primary-foreground);
+        --destructive-color: var(--color-destructive-dark);
 
-		/* Buttons */
-		--primary: var(--primary-color);
-		--secondary: var(--gray-light);
-		--muted: var(--gray-light);
-		--accent: hsl(174, 70%, 40%);
-		--destructive: var(--destructive-color);
+        /* Backgrounds */
+        --background: var(--black);
+        --foreground: var(--white);
+        --card-background: var(--black);
+        --popover-background: var(--black);
 
-		/* Borders and Inputs */
-		--border: var(--gray-medium);
-		--input: var(--gray-medium);
-		--ring: var(--white);
+        /* Foregrounds */
+        --card-foreground: var(--white);
+        --popover-foreground: var(--white);
+        --primary-foreground: var(--primary-foreground-color);
+        --secondary-foreground: var(--white);
+        --muted-foreground: var(--gray-dark);
+        --accent-foreground: var(--white);
+        --destructive-foreground: var(--white);
 
-		/* Charts */
-		--chart-1: var(--dark-color-chart-1);
-		--chart-2: var(--dark-color-chart-2);
-		--chart-3: var(--dark-color-chart-3);
-		--chart-4: var(--dark-color-chart-4);
-		--chart-5: var(--dark-color-chart-5);
-	}
+        /* Buttons */
+        --primary: var(--primary-color);
+        --secondary: var(--gray-light);
+        --muted: var(--gray-light);
+        --accent: hsl(174, 70%, 40%);
+        --destructive: var(--destructive-color);
+
+        /* Borders and Inputs */
+        --border: var(--gray-medium);
+        --input: var(--gray-medium);
+        --ring: var(--white);
+
+        /* Charts */
+        --chart-1: var(--dark-color-chart-1);
+        --chart-2: var(--dark-color-chart-2);
+        --chart-3: var(--dark-color-chart-3);
+        --chart-4: var(--dark-color-chart-4);
+        --chart-5: var(--dark-color-chart-5);
+    }
 }
 
 @layer base {
-	* {
-		@apply border-border;
-	}
-	body {
-		@apply bg-background text-foreground;
-	}
+    * {
+        @apply border-border;
+    }
+
+    body {
+        @apply bg-background text-foreground;
+    }
+}
+
+@layer components {
+    .tech-container {
+        @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+    }
+
+    .tech-button {
+        @apply bg-techblue hover:opacity-80 text-white font-bold py-3 px-6 rounded-md transition-all duration-300 transform hover:scale-105;
+    }
+
+    .tech-section {
+        @apply py-16 md:py-24;
+    }
+
+    .tech-card {
+        @apply bg-black/80 backdrop-blur-sm p-6 rounded-lg border border-white/10;
+    }
+
+    .tech-gradient-text {
+        @apply bg-gradient-to-r from-techblue via-techcyan to-techgreen inline-block text-transparent bg-clip-text;
+    }
 }

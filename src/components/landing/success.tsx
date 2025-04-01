@@ -41,7 +41,7 @@ export default function Success() {
 			<div className="tech-container">
 				<div className="text-center mb-16">
 					<h2 className="text-4xl font-bold mb-4">Casos de Éxito</h2>
-					<div className="h-1 w-24 bg-techblue mx-auto mb-6"></div>
+					<div className="h-1 w-24 bg-techblue mx-auto mb-6" />
 					<p className="text-lg max-w-3xl mx-auto">
 						Estas son algunas historias de éxito de participantes que han
 						transformado sus ideas en startups de Deep Tech con potencial
@@ -50,9 +50,9 @@ export default function Success() {
 				</div>
 
 				<div className="grid md:grid-cols-3 gap-8 mb-16">
-					{testimonials.map((testimonial, index) => (
+					{testimonials.map((testimonial) => (
 						<div
-							key={index}
+							key={testimonial.name}
 							className="bg-white rounded-lg p-8 shadow-md relative"
 						>
 							<div className="absolute -top-4 -left-4 bg-techblue rounded-full p-2 shadow-lg">
@@ -76,9 +76,9 @@ export default function Success() {
 							</div>
 
 							<div className="absolute bottom-4 right-4 flex">
-								{[...Array(5)].map((_, i) => (
+								{[...new Array(5)].map((_, i) => (
 									<Star
-										key={i}
+										key={i.toString()}
 										size={16}
 										className="text-yellow-400 fill-current"
 									/>
@@ -94,8 +94,8 @@ export default function Success() {
 					</h3>
 
 					<div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center">
-						{partners.map((partner, index) => (
-							<div key={index} className="flex justify-center">
+						{partners.map((partner) => (
+							<div key={partner.name} className="flex justify-center">
 								<img
 									src={partner.logo}
 									alt={partner.name}

@@ -11,7 +11,7 @@ export default function Hero() {
 					background:
 						"radial-gradient(circle at center, rgba(10, 132, 255, 0.15) 0%, rgba(0, 0, 0, 1) 70%)",
 				}}
-			></div>
+			/>
 
 			<div className="tech-container relative z-10 flex flex-col items-center text-center px-4 sm:px-6 lg:px-8">
 				<h1 className="text-5xl md:text-7xl font-extrabold mb-6 leading-tight">
@@ -55,6 +55,7 @@ export default function Hero() {
 							strokeLinecap="round"
 							strokeLinejoin="round"
 						>
+							<title>Scroll down</title>
 							<path d="M12 5v14M5 12l7 7 7-7" />
 						</svg>
 					</a>
