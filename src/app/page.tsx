@@ -1,13 +1,13 @@
-import Navbar from "@/components/navbar";
-import Hero from "@/components/landing/hero";
-import Challenge from "@/components/landing/challenge";
-import About from "@/components/landing/about";
-import Program from "@/components/landing/program";
-import Houses from "@/components/landing/houses";
-import Success from "@/components/landing/success";
-import FAQ from "@/components/landing/faq";
-import Contact from "@/components/landing/contact";
 import Footer from "@/components/footer";
+import About from "@/components/landing/about";
+import Challenge from "@/components/landing/challenge";
+import Contact from "@/components/landing/contact";
+// import Success from "@/components/landing/success";
+import FAQ from "@/components/landing/faq";
+import Hero from "@/components/landing/hero";
+import Houses from "@/components/landing/houses";
+import Program from "@/components/landing/program";
+import Navbar from "@/components/navbar";
 
 /**
  * @returns Home page component
@@ -22,7 +22,7 @@ export default async function Home() {
 				<About />
 				<Program />
 				<Houses />
-				<Success />
+				{/*<Success />*/}
 				<FAQ />
 				<Contact />
 			</main>

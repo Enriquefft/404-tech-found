@@ -1,7 +1,9 @@
 "use client";
-import React, { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
+import { orbitron } from "@/styles/fonts";
+import { Menu, X } from "lucide-react";
+import React, { useState, useEffect } from "react";
 
 export default function Navbar() {
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -39,9 +41,14 @@ export default function Navbar() {
 		>
 			<div className="tech-container flex items-center justify-between">
 				<div className="flex items-center">
-					<a href="/" className="text-white font-bold text-2xl">
-						<span className="text-white">404</span>
-						<span className="text-techblue"> TECH FOUND</span>
+					<a
+						href="/"
+						className="text-white font-bold text-xl flex items-center flex-col"
+					>
+						<span className={cn("text-center w-full", orbitron.className)}>
+							404
+						</span>
+						<span className={cn(orbitron.className)}> TECH FOUND</span>
 					</a>
 				</div>
 

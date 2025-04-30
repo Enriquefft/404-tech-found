@@ -1,4 +1,6 @@
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
+import { orbitron } from "@/styles/fonts";
 import { ArrowRight } from "lucide-react";
 import React from "react";
 
@@ -15,7 +17,9 @@ export default function Hero() {
 
 			<div className="tech-container relative z-10 flex flex-col items-center text-center px-4 sm:px-6 lg:px-8">
 				<h1 className="text-5xl md:text-7xl font-extrabold mb-6 leading-tight">
-					<span className="tech-gradient-text">404 TECH FOUND</span>
+					<span className={cn(orbitron.className)}>404</span>
+					<br />
+					<span className={cn(orbitron.className)}> TECH FOUND</span>
 				</h1>
 				<h2 className="text-3xl md:text-5xl font-bold mb-8 leading-tight">
 					Formando a la próxima generación de <br />

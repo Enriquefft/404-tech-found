@@ -1,6 +1,6 @@
-import React from "react";
-import { Rocket, BrainCircuit } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { BotIcon, BrainCircuit } from "lucide-react";
+import React from "react";
 
 export default function Houses() {
 	// Create a custom Flask icon since it's not available in lucide-react
@@ -25,16 +25,12 @@ export default function Houses() {
 
 	const houses = [
 		{
-			icon: <Rocket className="h-12 w-12" />,
-			name: "Space Tech",
+			icon: <BotIcon className="h-12 w-12" />,
+			name: "Hardware",
 			description:
-				"Desarrollo de tecnologías para la exploración espacial, satélites y aplicaciones terrestres.",
+				"Desarrollo de dispositivos físicos como sensores, chips o máquinas para soluciones tecnológicas innovadoras.",
 			color: "from-blue-500 to-purple-500",
-			examples: [
-				"Nanosatélites",
-				"Sistemas de propulsión",
-				"Monitoreo terrestre",
-			],
+			examples: ["Sensores", "Robots", "chips"],
 		},
 		{
 			icon: <Flask />,
